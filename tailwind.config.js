@@ -13,6 +13,12 @@ module.exports = {
       },
       colors: {
         'yellowDesign': '#FED45B',
+        'cyanDesign': '#23F3DF',
+        'grayDesign':'#ACACAC',
+        'whiteMainDesign':'#FAFAFA',
+      },
+      fontFamily: {
+        'nunito':['Nunito', 'sans-serirf', 'system-ui'],
       },
     },
   },
