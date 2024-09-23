@@ -16,6 +16,7 @@ module.exports = {
         'cyanDesign': '#23F3DF',
         'grayDesign':'#ACACAC',
         'whiteMainDesign':'#FAFAFA',
+        'FooterDesign': '#24202A'
       },
       fontFamily: {
         'nunito':['Nunito', 'sans-serirf', 'system-ui'],
