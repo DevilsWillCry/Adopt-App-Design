@@ -22,7 +22,12 @@
     </style>
 </head>
 <body class="bg-whiteMainDesign font-nunito"> <!--bg-whiteMainDesign-->
-    <div id="menu-container" class="h-auto w-screen flex flex-col gap-5 items-center justify-center p-7">
+    <div id="menu-container" class="h-auto w-screen flex flex-col gap-5 items-center justify-center p-7 mb-12">
+        <div class="w-72 h-auto flex flex-row flex-shrink-0  justify-between align-middle items-center">
+            <i class=" fa-solid fa-bars-staggered text-xl"></i>
+            <img class="w-8 h-7 bg-yellow-300 rounded-full" src="./img/users-default-image/user_basic.svg" alt="">
+        </div>
+
         <div class="w-72 h-auto">
             <span class="font-bold">Adopt</span>
             <p class="text-grayDesign text-xs">your favorite soulmate pet</p>
@@ -35,27 +40,27 @@
 
         <div id="filter-pet" class="relative w-72 rounded-3xl max-w-4xl overflow-x-auto flex items-center p-3 gap-3  snap-x snap-mandatory scroll-smooth hide-scrollbar overflow-hidden">
 
-            <div class="snap-start waw-auto h-8 bg-white shadow-md flex flex-nowrap flex-shrink-0  rounded-2xl gap-1 items-center content-center p-2 ">
+            <div class="snap-start cursor-pointer w-auto h-8 bg-white shadow-md flex flex-nowrap flex-shrink-0  rounded-2xl gap-1 items-center content-center p-2 ">
                 <img class="w-5 h-5 ml-1 object-cover" src="./img/cats/bengal.png" alt="">
                 <span class="text-nowrap text-xs text-grayDesign">Bengal</span>
             </div>
 
-            <div class="snap-start w-auto h-8 bg-white shadow-md flex flex-nowrap flex-shrink-0  rounded-2xl gap-1 items-center content-center p-2">
+            <div class="snap-start cursor-pointer w-auto h-8 bg-white shadow-md flex flex-nowrap flex-shrink-0  rounded-2xl gap-1 items-center content-center p-2">
                 <img class="w-5 h-5 ml-1 object-cover" src="./img/cats/persian.png" alt="">
                 <span class="text-nowrap text-xs text-grayDesign">Persian</span>
             </div>
 
-            <div class="snap-start w-auto h-8 bg-white shadow-md flex flex-nowrap flex-shrink-0  rounded-2xl gap-1 items-center content-center p-2">
+            <div class="snap-start cursor-pointer w-auto h-8 bg-white shadow-md flex flex-nowrap flex-shrink-0  rounded-2xl gap-1 items-center content-center p-2">
                 <img class="w-5 h-5 ml-1 object-cover" src="./img/cats/regdoll.png" alt="">
                 <span class="text-nowrap text-xs text-grayDesign">Regdoll</span>
             </div>
                 
-            <div class="snap-start w-auto h-8 bg-white shadow-md flex flex-nowrap flex-shrink-0  rounded-2xl gap-1 items-center content-center p-2">
+            <div class="snap-start cursor-pointer w-auto h-8 bg-white shadow-md flex flex-nowrap flex-shrink-0  rounded-2xl gap-1 items-center content-center p-2">
                 <img class="w-5 h-5 ml-1 object-cover" src="./img/cats/devon-rex.png" alt="">
                 <span class="text-nowrap text-xs text-grayDesign">Devon Rex</span>
             </div>
             
-            <div class="snap-start w-auto h-8 bg-white shadow-md flex flex-nowrap flex-shrink-0  rounded-2xl gap-1 items-center content-center p-2">
+            <div class="snap-start cursor-pointer w-auto h-8 bg-white shadow-md flex flex-nowrap flex-shrink-0  rounded-2xl gap-1 items-center content-center p-2">
                 <img class="w-5 h-5 ml-1 object-cover" src="./img/cats/ural-rex.png" alt="">
                 <span class="text-nowrap text-xs text-grayDesign">Ural Rex</span>
             </div>
@@ -99,21 +104,68 @@
                 <img class= "w-36 h-28 absolute top-0 -mt-5 mx-auto left-1/2 transform -translate-x-1/2 -skew-x-12" src="./img/cat-show-2.png" alt="Cat-Logo">
             </div>
             <div class="w-max h-auto text-center m-1 ">
-                <p class="text-center rounded-full bg-rose-600 w-20 h-auto px-3 text-sm text-white mb-2">female</p>
-                <p class="text-center rounded-full bg-sky-400 w-20 h-auto px-3 text-sm text-white mb-2">Bengal </p>
+                <p class="text-center rounded-full bg-rose-600 w-20 h-auto px-3 text-sm text-white mb-2">male</p>
+                <p class="text-center rounded-full bg-sky-400 w-20 h-auto px-3 text-sm text-white mb-2">persian</p>
                 <p class="text-center rounded-full bg-yellow-300 w-20 h-auto px-3 text-sm text-white mb-2">Brown</p>
             </div>            
         </div>
-
-        <!--Card Footer-->
-        <div class="fixed bottom-0 z-30 bg-FooterDesign w-72 h-14 rounded-t-3xl flex justify-around items-center content-center">
-            <button class="relative"><i class="fa-solid fa-house text-white hover:text-yellowDesign"></i></button>
-            <button class="relative"><i class="fa-solid fa-cart-shopping text-white hover:text-yellowDesign"></i></button>
-            <button class="relative bg-cyanDesign w-10 h-11 mb-3 rounded-bl-2xl rounded-br-2xl hover:text-yellowDesign"><i class="fa-solid fa-plus text-white hover:text-yellowDesign"></i></button>
-            <button class="relative"><i class="fa-solid fa-heart text-white hover:text-yellowDesign"></i></button>
-            <button class="relative"><i class="fa-solid fa-user text-white hover:text-yellowDesign"></i></button>
-        </div>
     </div>
+
+    <!-- Shopping Cart -->
+    <div id="shopping-sidebar" class="fixed top-0 z-30 left-0 w-screen h-screen bg-whiteMainDesign text-black transform -translate-x-full transition-transform duration-300">
+        <!-- Contenido del sidebar -->
+        <h2 class="p-4 text-lg font-semibold">Shopping Cart</h2>
+        <ul>
+            <li class="p-4">Producto 1</li>
+            <li class="p-4">Producto 2</li>
+            <li class="p-4">Producto 3</li>
+        </ul>
+    </div>
+
+
+    <!-- Adding Pet-->
+    <div id="add-pet-sidebar" class="fixed top-0 z-30 left-0 w-screen h-screen bg-whiteMainDesign text-black transform -translate-x-full transition-transform duration-300">
+        <!-- Contenido del sidebar -->
+        <h2 class="p-4 text-lg font-semibold">Add Pet</h2>
+        <ul>
+            <li class="p-4">Mascota 1 <button>editar</button></li>
+            <li class="p-4">Mascota 2 <button>editar</button></li>
+            <li class="p-4">Mascota 3 <button>editar</button></li>
+        </ul>
+    </div>
+    
+    
+    <!-- Favorite Section -->
+    <div id="favorite-sidebar" class="fixed top-0 z-30 left-0 w-screen h-screen bg-whiteMainDesign text-black transform -translate-x-full transition-transform duration-300">
+        <!-- Contenido del sidebar -->
+        <h2 class="p-4 text-lg font-semibold">Favorite</h2>
+        <ul>
+            <li class="p-4">Mascota 1</li>
+            <li class="p-4">Mascota 2</li>
+            <li class="p-4">Producto 1</li>
+        </ul>
+    </div>
+
+    <!-- Profile Section -->
+    <div id="profile-sidebar" class="fixed top-0 z-30 left-0 w-screen h-screen bg-whiteMainDesign text-black transform -translate-x-full transition-transform duration-300">
+        <!-- Contenido del sidebar -->
+        <h2 class="p-4 text-lg font-semibold">Profile</h2>
+        <ul>
+            <li class="p-4">Miguel Angel</li>
+            <li class="p-4">favoritos</li>
+            <li class="p-4">acerca de mi</li>
+        </ul>
+    </div>
+    
+    <!--Card Footer-->
+    <div class="fixed bottom-0 left-2/4 -translate-x-2/4 z-50 bg-FooterDesign w-72 h-14 rounded-t-3xl flex justify-around ">
+        <button id="home" class="relative text-white"><i class="fa-solid fa-house hover:text-yellowDesign"></i></button>
+        <button id="shop" class="relative text-white"><i class="fa-solid fa-cart-shopping hover:text-yellowDesign"></i></button>
+        <button id="add" class="relative  text-white bg-cyanDesign w-10 h-11 mb-3 rounded-b-2xl hover:text-yellowDesign"><div class="rounded-full border-t-2 border-b-2 border-l-2 border-r-2 border-whiteMainDesign"><i class="fa-solid fa-plus hover:text-yellowDesign"></i></div></button>
+        <button id="favorite" class="relative text-white"><i class="fa-solid fa-heart hover:text-yellowDesign"></i></button>
+        <button id="profile" class="relative text-white"><i class="fa-solid fa-user hover:text-yellowDesign"></i></button>
+    </div>
+
 </body>
 
 <script type="text/javascript" src="./app.js"></script>
