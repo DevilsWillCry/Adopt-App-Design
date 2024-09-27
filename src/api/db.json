@@ -1,0 +1,68 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Laura Gómez",
+      "email": "laura.gomez@example.com",
+      "phone": "+57 321 555 1234",
+      "password": "password123",
+      "favorites": [],
+      "cart": []
+    }
+  ],
+  "pets": [
+    {
+      "id": "1",
+      "images": [
+        "https://example.com/images/luna1.jpg",
+        "https://example.com/images/luna2.jpg",
+        "https://example.com/images/luna3.jpg"
+      ],
+      "name": "Luna",
+      "gender": "Female",
+      "breed": "Siamese",
+      "eyeColor": "Blue",
+      "personality": "Luna is a calm, affectionate cat who loves to curl up and cuddle. She is independent but enjoys spending time with her human companions.",
+      "medicalInfo": "Luna has been spayed and is up to date on her vaccinations, including rabies and feline leukemia.",
+      "biography": "Hi, I’m Luna! I’ve had a pretty adventurous life so far, but now I’m ready to find a forever home where I can relax and enjoy some good company. I love finding sunny spots to nap and I have the sweetest purr when I’m happy.",
+      "aboutPet": "Luna is a 3-year-old Siamese cat with a gentle nature. She is looking for a calm household where she can be pampered and loved. Luna is great with children and other pets, making her an excellent addition to a loving family.",
+      "adoptionPrice": 50.0
+    },
+    {
+      "id": "2",
+      "images": [
+        "https://example.com/images/max1.jpg",
+        "https://example.com/images/max2.jpg"
+      ],
+      "name": "Max",
+      "gender": "Male",
+      "breed": "Labrador Retriever",
+      "eyeColor": "Brown",
+      "personality": "Max is an energetic and playful dog who loves to run and play fetch. He is friendly with everyone and always excited to meet new people and dogs.",
+      "medicalInfo": "Max has received all his vaccinations, including rabies and parvovirus. He has also been neutered.",
+      "biography": "Hey, I’m Max! I’m a young, energetic lab who loves to have fun. My favorite activities include playing fetch, swimming, and going on long walks. I’m looking for a family that loves outdoor adventures as much as I do!",
+      "aboutPet": "Max is a 2-year-old Labrador with boundless energy. He needs an active home that can provide him with plenty of exercise and mental stimulation. Max is great with kids and would thrive in a family that enjoys spending time outdoors.",
+      "adoptionPrice": 100.0
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "images": [],
+      "name": "Purina Cat Chow",
+      "productPrice": 10.99,
+      "description": "Purina Cat Chow is a high-quality cat food that provides essential nutrients for a healthy and happy cat.",
+      "ageRange": "Adult cats",
+      "typeFood": "Dry"
+    },
+    {
+      "id": "2",
+      "images": [],
+      "name": "Royal Canin Puppy",
+      "productPrice": 29.99,
+      "description": "Royal Canin Puppy food provides a balanced diet rich in vitamins and proteins to support the growth of your puppy.",
+      "ageRange": "Puppies",
+      "typeFood": "Dry"
+    }
+  ]
+}

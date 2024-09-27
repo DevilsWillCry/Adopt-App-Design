@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../output.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel='icon' type='../img/cat-icon.svg' href="./img/cat-icon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <title>Login and Registration</title>
+</head>
+<body class="bg-white font-nunito">
+    <div id="container" class="w-screen h-screen flex flex-col gap-5 justify-center items-center">
+        <div id="login-form" class="fixed bg-yellowDesign w-[90%] h-auto rounded-3xl p-6 justify-center items-center text-center shadow-2xl transform transition-all" > <!--hidden-->
+            <a href="index.html">
+                <div class="bg-cyanDesign w-full h-auto mb-9 rounded-full transform transition-all hover:scale-110 hover:bg-cyan-500 hover:font-bold">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </div>
+            </a>
+            
+            <div class="relative flex flex-row items-center justify-center">
+                <img class="w-14 h-14 skew-y-6 animate-wiggle" src="../img/cat-login/paw.png" alt="img-paw-greetings">
+                <h1  class="mr-14 ml-4 text-xl font-bold">Welcome Back!</h1>
+            </div>
+            <div class="justify-center items-center text-xs mb-10">
+                <span>Don't have an account? </span>
+                <span id="register-span" class="inline-block w-16 h-auto ml-1 cursor-pointer bg-cyanDesign rounded-full shadow-xl p-2 transform-gpu transition-all hover:bg-cyan-500 hover:animate-wiggle hover:font-bold">Register</span> 
+            </div>
+            <form action="#">
+                <div class="text-start" id="email">                   
+                    <label for="email-login">Your e-mail</label>
+                    <input class="w-full h-auto rounded-2xl border-none shadow-xl mb-7 p-2 focus:outline-none focus:ring focus:ring-red-300" type="email" id="email-login" name="email" placeholder="Enter your Email" required>
+                </div>
+                <div class="text-start" id="password">
+                    <label  for="password-login">Your password</label>
+                    <input class="w-full h-auto rounded-2xl border-none shadow-xl p-2 mb-2 focus:outline-none focus:ring focus:ring-red-300" type="password" id="password-login" name="password" placeholder="Enter your Password"  pattern=".{8,12}" title="
+                    Enter between eight and twelve characters" required>
+                </div>
+                <button id="register-button" class="w-full h-8 bg-cyanDesign mt-10 rounded-xl shadow-2x transform transition-all hover:scale-110 hover:bg-cyan-500 hover:font-bold" type="submit" value="submit">Sing In</button> 
+            </form>
+        </div>
+        <div id="register-form" class="fixed bottom-0 translate-y-full bg-yellowDesign w-[90%] h-auto rounded-3xl p-6 justify-center items-center text-center shadow-2xl transform transition-all"><!--hidden-->
+            <a href="index.html">
+                <div class="bg-cyanDesign w-full h-auto mb-4 rounded-full transform transition-all hover:scale-110 hover:bg-cyan-500 hover:font-bold">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </div>
+            </a>
+            <div class="relative flex flex-row items-center justify-center">
+                <h1 class="text-xl font-bold">Create an account.</h1> 
+            </div>
+            <div class="justify-center items-center text-xs mb-11">
+                <span> Already have an account?</span>  
+                <span id="login-span" class="inline-block w-16 h-auto ml-1 cursor-pointer bg-cyanDesign rounded-full shadow-xl p-2 transform-gpu transition-all hover:bg-cyan-500 hover:animate-wiggle hover:font-bold">Sign In</span> 
+            </div>
+            <form action="#">
+                <div class="text-start" id="name">  
+                    <label  for="username">Your name</label>            
+                    <input class="w-full h-auto rounded-2xl border-none shadow-xl mb-7 p-2 focus:outline-none focus:ring focus:ring-red-300" type="text" id="username" name="username" placeholder="Enter your name" required>
+                </div>
+                <div class="text-start" id="email">
+                    <label  for="email">Your email</label>            
+                    <input class="w-full h-auto rounded-2xl border-none shadow-xl mb-7 p-2 focus:outline-none focus:ring focus:ring-red-300" type="email" id="email" name="email" placeholder="Enter your Email" required>
+                </div>
+                <div class="text-start" id="password">
+                    <label  for="password">Your password</label>            
+                    <input class="w-full h-auto rounded-2xl border-none shadow-xl mb-7 p-2 focus:outline-none focus:ring focus:ring-red-300" type="password" id="password" name="password" pattern=".{8,12}" title="
+                    Enter between eight and twelve characters" placeholder="Enter your Password" required>
+                </div>
+                <div class="text-start"id="phone">
+                    <label  for="phone">Your phone</label>            
+                    <input class="w-full h-auto rounded-2xl border-none shadow-xl mb-7 p-2 focus:outline-none focus:ring focus:ring-red-300" type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Format Number: xxx-xxx-xxxx" placeholder="Enter Your Phone Number" required>
+                </div>
+                <button id="login-button" class="w-full h-8 bg-cyanDesign mt-5 rounded-xl shadow-2x transform transition-all hover:scale-110 hover:bg-cyan-500 hover:font-bold" type="submit"  value="submit">Sign Up</button> 
+            </form>
+        </div>
+    </div>
+    <script type="module" src="./scriptLogin.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</body>
+</html>

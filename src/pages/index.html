@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../output.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel='icon' type='../img/cat-icon.svg' href="./img/cat-icon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <title>¡Adopt Now!</title>
+    <style>
+        .custom-shape::before {
+            content: '';
+            position: absolute;
+            bottom: -12%;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background-color: inherit;
+            clip-path: ellipse(50% 20% at 50% 80%);
+        }
+    </style>
+</head>
+<body class="h-screen bg-whiteMainDesign flex flex-col flex-nowrap flex-shrink-0  gap-5 justify-center items-center content-center font-nunito">
+    <div class=" relative w-76.5 h-62.25 bg-yellowDesign overflow-hidden rounded-t-3xl rounded-b-xl items-center justify-center">
+        <img class="w-auto h-62.25 p-4 z-50" src="../img/cat-show-1.png" alt="img/cat-show-1">
+        <div class="custom-shape rounded-t-lg bg-whiteMainDesign"></div>
+    </div>
+    <div class="w-64 h-auto text-center mt-5">
+        <h1 class="text-2xl font-bold mb-3 ">Adopt Stray Pets</h1>
+        <p class="text-lg text-black">Find the best pet near you and adopt your favorite one.</p>        
+    </div>
+    <a class="transform transition-all" href="login-register.html">
+        <div class="w-36 h-12  bg-slideAdopt rounded-full flex flex-nowrap flex-row justify-start items-center p-3 gap-3 mt-14 cursor-pointer  transform transition-all hover:scale-110 hover:animate-wiggle hover:invert">
+                <span class="text-whiteMainDesign text-xs">Adopt Now</span>
+                <span class="flex w-9 h-7 bg-cyanDesign  rounded-full justify-center items-center"><i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+    </a>
+
+</body>
+</html>

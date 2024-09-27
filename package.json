@@ -4,5 +4,8 @@
   },
   "scripts": {
     "dev": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch"
+  },
+  "dependencies": {
+    "axios": "^1.7.7"
   }
 }
