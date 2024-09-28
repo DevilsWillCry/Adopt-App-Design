@@ -1,3 +1,14 @@
+import { getDataUser } from '../src/modules/users/getDataUser.js';
+import { usersURL } from '../src/modules/constants.js';
+
+document.addEventListener("DOMContentLoaded", async () => {
+    // Carga de datos y renderizado de la lista de mascotas
+    //const pets = await getPets();
+    const dataUsers = await getDataUser(usersURL);
+    console.log(dataUsers);
+});
+
+
 function toggleHeart(button) {
     const heartIcon = button.querySelector('i');
     console.log(heartIcon);
@@ -23,6 +34,8 @@ const elements = {
     }
 };
 
+const titleAdd = document.getElementById('title-add');
+
 // Inicializamos el botón de inicio con la clase 'text-yellowDesign'
 elements.buttons.home.classList.add('text-yellowDesign');
 
@@ -43,21 +56,32 @@ function showSidebar(sidebar, button) {
 // Añadimos los eventos a cada botón
 elements.buttons.shop.addEventListener('click', () => {
     showSidebar(elements.sidebars.shopping, elements.buttons.shop);
+    titleAdd.classList.remove('top-[16%]');
+    titleAdd.classList.add('top-[35%]');
 });
 
 elements.buttons.home.addEventListener('click', () => {
     hideAllSidebars(); // Ocultamos todos los sidebars
     elements.buttons.home.classList.add('text-yellowDesign'); // Activamos solo el botón de inicio
+    titleAdd.classList.remove('top-[16%]');
+    titleAdd.classList.add('top-[35%]');
 });
 
 elements.buttons.favorite.addEventListener('click', () => {
     showSidebar(elements.sidebars.favorite, elements.buttons.favorite);
+    titleAdd.classList.remove('top-[16%]');
+    titleAdd.classList.add('top-[35%]');
 });
 
 elements.buttons.profile.addEventListener('click', () => {
     showSidebar(elements.sidebars.profile, elements.buttons.profile);
+    titleAdd.classList.remove('top-[16%]');
+    titleAdd.classList.add('top-[35%]');
 });
 
 elements.buttons.add.addEventListener('click', () => {
     showSidebar(elements.sidebars.addPet, elements.buttons.add);
+    titleAdd.classList.remove('top-[35%]');
+    titleAdd.classList.add('top-[16%]');
 });
+

@@ -124,14 +124,26 @@
 
 
     <!-- Adding Pet-->
-    <div id="add-pet-sidebar" class="fixed top-0 z-30 left-0 w-screen h-screen bg-whiteMainDesign text-black transform -translate-x-full transition-transform duration-300">
+    <!-- -translate-x-full -->
+    <div id="add-pet-sidebar" class="fixed top-0  -translate-x-full z-30 left-0 w-screen h-screen flex flex-col items-center justify-center bg-whiteMainDesign text-black transform  transition-transform duration-300">
         <!-- Contenido del sidebar -->
-        <h2 class="p-4 text-lg font-semibold">Add Pet</h2>
-        <ul>
-            <li class="p-4">Mascota 1 <button>editar</button></li>
-            <li class="p-4">Mascota 2 <button>editar</button></li>
-            <li class="p-4">Mascota 3 <button>editar</button></li>
-        </ul>
+        <!-- Título -->
+        <div  id="title-add"  class="fixed top-[35%] left-2/4 -translate-x-2/4  bg-cyanDesign rounded-2xl border-b-4 border-b-yellowDesign border-r-4 border-r-yellowDesign shadow-2xl p-2 transform-gpu transition-all  delay-200 z-0">
+            <h3 class="text-lg font-bold">Add new product or pet</h3>
+        </div>      
+        <div class="relative flex flex-col w-3/4 h-1/2 z-20 border-b-4 border-r-4 border-b-yellow-600 border-r-yellow-600 bg-yellowDesign  p-5 rounded-2xl shadow-xl mb-10 text-center">
+            <div class="inline-block p-2 bg-cyanDesign rounded-2xl shadow-2xl border-b-2 border-b-yellow-600 border-r-2 border-r-yellow-600">                
+                <p class="text-xs ">What would you like to create next?</p>
+            </div>
+            <div>
+                <!-- Formulario para agregar un nuevo producto o mascota -->
+                <!-- Formulario -->
+                <form action="#">
+                    
+                </form>
+            </div>
+        </div>
+        
     </div>
     
     
@@ -161,12 +173,13 @@
     <div class="fixed bottom-0 left-2/4 -translate-x-2/4 z-50 bg-FooterDesign  w-72 h-14 rounded-t-3xl flex justify-around ">
         <button id="home" class="relative text-white"><i class="fa-solid fa-house hover:text-yellowDesign hover:animate-pulse"></i></button>
         <button id="shop" class="relative text-white"><i class="fa-solid fa-cart-shopping hover:text-yellowDesign hover:animate-pulse"></i></button>
-        <button id="add" class="relative  text-white bg-cyanDesign w-10 h-11 mb-3 rounded-b-2xl"><i class="fa-solid fa-plus  hover:text-yellowDesign hover:animate-bounce"></i></button>
+        <button id="add" class="relative  text-white bg-cyanDesign w-10 h-11 mb-3 rounded-b-2xl "><i class="fa-solid fa-plus  hover:text-yellowDesign hover:animate-bounce"></i></button>
         <button id="favorite" class="relative text-white"><i class="fa-solid fa-heart hover:text-yellowDesign hover:animate-pulse"></i></button>
-        <button id="profile" class="relative text-white"><i class="fa-solid fa-user hover:text-yellowDesign hover:animate-pulse"></i></button>
+        <button id="profile" class="relative text-white "><i class="fa-solid fa-user hover:text-yellowDesign hover:animate-pulse"></i></button>
     </div>
 
 </body>
 
-<script src="./scriptHome.js"></script>
+<script type="module" src="./scriptHome.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </html>

@@ -624,6 +624,18 @@ video {
   top: 0px;
 }
 
+.top-\[16\%\] {
+  top: 16%;
+}
+
+.top-\[35\%\] {
+  top: 35%;
+}
+
+.z-0 {
+  z-index: 0;
+}
+
 .z-10 {
   z-index: 10;
 }
@@ -667,10 +679,6 @@ video {
 
 .mb-10 {
   margin-bottom: 2.5rem;
-}
-
-.mb-11 {
-  margin-bottom: 2.75rem;
 }
 
 .mb-12 {
@@ -737,6 +745,10 @@ video {
   margin-top: 3.5rem;
 }
 
+.mt-3 {
+  margin-top: 0.75rem;
+}
+
 .mt-5 {
   margin-top: 1.25rem;
 }
@@ -751,6 +763,10 @@ video {
 
 .grid {
   display: grid;
+}
+
+.h-1\/2 {
+  height: 50%;
 }
 
 .h-10 {
@@ -821,6 +837,10 @@ video {
   width: 5rem;
 }
 
+.w-3\/4 {
+  width: 75%;
+}
+
 .w-35\.5 {
   width: 8.875rem;
 }
@@ -853,6 +873,10 @@ video {
   width: 2.25rem;
 }
 
+.w-\[80\%\] {
+  width: 80%;
+}
+
 .w-\[90\%\] {
   width: 90%;
 }
@@ -872,6 +896,10 @@ video {
 
 .w-screen {
   width: 100vw;
+}
+
+.w-44 {
+  width: 11rem;
 }
 
 .max-w-4xl {
@@ -1061,6 +1089,10 @@ video {
   border-radius: 9999px;
 }
 
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
 .rounded-xl {
   border-radius: 0.75rem;
 }
@@ -1085,8 +1117,44 @@ video {
   border-top-right-radius: 0.5rem;
 }
 
+.border-b-2 {
+  border-bottom-width: 2px;
+}
+
+.border-b-4 {
+  border-bottom-width: 4px;
+}
+
+.border-r-2 {
+  border-right-width: 2px;
+}
+
+.border-r-4 {
+  border-right-width: 4px;
+}
+
 .border-none {
   border-style: none;
+}
+
+.border-b-yellow-600 {
+  --tw-border-opacity: 1;
+  border-bottom-color: rgb(202 138 4 / var(--tw-border-opacity));
+}
+
+.border-b-yellowDesign {
+  --tw-border-opacity: 1;
+  border-bottom-color: rgb(254 212 91 / var(--tw-border-opacity));
+}
+
+.border-r-yellow-600 {
+  --tw-border-opacity: 1;
+  border-right-color: rgb(202 138 4 / var(--tw-border-opacity));
+}
+
+.border-r-yellowDesign {
+  --tw-border-opacity: 1;
+  border-right-color: rgb(254 212 91 / var(--tw-border-opacity));
 }
 
 .bg-FooterDesign {
@@ -1151,6 +1219,10 @@ video {
   padding: 1rem;
 }
 
+.p-5 {
+  padding: 1.25rem;
+}
+
 .p-6 {
   padding: 1.5rem;
 }
@@ -1185,6 +1257,10 @@ video {
   line-height: 2rem;
 }
 
+.text-\[5vw\] {
+  font-size: 5vw;
+}
+
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -1203,6 +1279,26 @@ video {
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
+}
+
+.text-\[1vw\] {
+  font-size: 1vw;
+}
+
+.text-\[0\.5vw\] {
+  font-size: 0.5vw;
+}
+
+.text-\[2vw\] {
+  font-size: 2vw;
+}
+
+.text-\[3vw\] {
+  font-size: 3vw;
+}
+
+.text-\[3\.5vw\] {
+  font-size: 3.5vw;
 }
 
 .font-bold {
@@ -1275,6 +1371,10 @@ video {
   transition-property: transform;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
+}
+
+.delay-200 {
+  transition-delay: 200ms;
 }
 
 .duration-300 {

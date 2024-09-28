@@ -7,7 +7,45 @@
       "phone": "+57 321 555 1234",
       "password": "password123",
       "favorites": [],
-      "cart": []
+      "cart": [],
+      "myPets": [],
+      "profileImage": ""
+    },
+    {
+      "id": "1a0ec69a-bf9b-477e-81c5-074b632a7904",
+      "username": "DevilsWillCry",
+      "email": "miguel.delta21@gmail.com",
+      "password": "password123",
+      "confirmPassword": "password123",
+      "phone": "317-846-5152",
+      "favorites": [],
+      "cart": [],
+      "myPets": [],
+      "profileImage": ""
+    },
+    {
+      "id": "a3edc998-3562-4c3a-9405-94ed088ec085",
+      "username": "John Doe",
+      "email": "john@gmail.com",
+      "password": "password123",
+      "confirmPassword": "password123",
+      "phone": "317-455-6789",
+      "favorites": [],
+      "cart": [],
+      "myPets": [],
+      "profileImage": ""
+    },
+    {
+      "id": "c8829444-2782-4992-92ba-95766d3fab17",
+      "username": "WaRStorm01",
+      "email": "miguel.delta22@gmail.com",
+      "password": "password123",
+      "confirmPassword": "password123",
+      "phone": "317-846-5152",
+      "favorites": [],
+      "cart": [],
+      "myPets": [],
+      "profileImage": ""
     }
   ],
   "pets": [
@@ -26,7 +64,7 @@
       "medicalInfo": "Luna has been spayed and is up to date on her vaccinations, including rabies and feline leukemia.",
       "biography": "Hi, I’m Luna! I’ve had a pretty adventurous life so far, but now I’m ready to find a forever home where I can relax and enjoy some good company. I love finding sunny spots to nap and I have the sweetest purr when I’m happy.",
       "aboutPet": "Luna is a 3-year-old Siamese cat with a gentle nature. She is looking for a calm household where she can be pampered and loved. Luna is great with children and other pets, making her an excellent addition to a loving family.",
-      "adoptionPrice": 50.0
+      "adoptionPrice": 50
     },
     {
       "id": "2",
@@ -42,7 +80,7 @@
       "medicalInfo": "Max has received all his vaccinations, including rabies and parvovirus. He has also been neutered.",
       "biography": "Hey, I’m Max! I’m a young, energetic lab who loves to have fun. My favorite activities include playing fetch, swimming, and going on long walks. I’m looking for a family that loves outdoor adventures as much as I do!",
       "aboutPet": "Max is a 2-year-old Labrador with boundless energy. He needs an active home that can provide him with plenty of exercise and mental stimulation. Max is great with kids and would thrive in a family that enjoys spending time outdoors.",
-      "adoptionPrice": 100.0
+      "adoptionPrice": 100
     }
   ],
   "products": [
