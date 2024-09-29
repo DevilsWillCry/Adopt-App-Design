@@ -21,11 +21,13 @@
         }
     </style>
 </head>
-<body class="bg-whiteMainDesign font-nunito"> <!--bg-whiteMainDesign-->
-    <div id="menu-container" class="h-auto w-screen flex flex-col gap-5 items-center justify-center p-7 mb-12">
-        <div class="w-72 h-auto flex flex-row flex-shrink-0  justify-between align-middle items-center">
+<body class="h-screen bg-whiteMainDesign font-nunito hide-scrollbar scroll-smooth snap-mandatory"> <!--bg-whiteMainDesign-->
+    <div id="menu-container" class="h-auto w-screen flex flex-col gap-5 items-center justify-center p-7 mb-10">
+        <div id="container-image-home" class="w-72 h-auto flex flex-row flex-shrink-0  justify-between align-middle items-center ">
             <i class=" fa-solid fa-bars-staggered text-xl"></i>
-            <img class="w-8 h-7 bg-yellow-300 rounded-full" src="./img/users-default-image/user_basic.svg" alt="">
+            <div id="profile-image-home">
+            <!-- Aquí ira la imagen de perfil del home -->
+            </div>
         </div>
 
         <div class="w-72 h-auto">
@@ -72,47 +74,13 @@
         </div>
 
         <!--Cards de descripción de los gatos-->
-        <div class="w-72 h-48 bg-white shadow-2xl grid grid-cols-2 row-auto gap-3 items-center justify-items-center rounded-2xl">
-            <div class="w-full h-auto col-span-2 grid grid-rows-2 grid-flow-col items-center justify-start"> <!-- bg-slate-700-->
-                <img class="bg-yellow-300 w-8 h-7 row-span-2 align-middle items-center ml-3 mr-5 rounded-full" src="./img/users-default-image/user_basic.svg" alt="">
-                <h1 class="font-bold">Nick Factural</h1>
-                <span class="text-xs text-grayDesign">Pet Star Shop</span>
-                <button class="w-fulLjustify-center align-middle items-center row-span-2 ml-20" onclick="toggleHeart(this)">
-                    <i class="text-red-600 z-10 fa-regular fa-heart"></i>
-                </button>
-            </div>  
-            <div class="w-35.5 h-22.5 rounded-[20px] skew-x-12 bg-yellowDesign ml-8">
-                <img class= "w-36 h-28 absolute top-0 -mt-5 mx-auto left-1/2 transform -translate-x-1/2 -skew-x-12" src="./img/cat-show-1.png" alt="Cat-Logo">
-            </div>
-            <div class="w-max h-auto text-center m-1 ">
-                <p class="text-center rounded-full bg-rose-600 w-20 h-auto px-3 text-sm text-white mb-2">female</p>
-                <p class="text-center rounded-full bg-sky-400 w-20 h-auto px-3 text-sm text-white mb-2">Bengal </p>
-                <p class="text-center rounded-full bg-yellow-300 w-20 h-auto px-3 text-sm text-white mb-2">Brown</p>
-            </div>            
-        </div>
-
-        <div class="w-72 h-48 bg-white shadow-2xl grid grid-cols-2 row-auto gap-3 items-center justify-items-center rounded-2xl">
-            <div class="w-full h-auto col-span-2 grid grid-rows-2 grid-flow-col items-center justify-start"> <!-- bg-slate-700-->
-                <img class="bg-yellow-300 w-8 h-7 row-span-2 align-middle items-center ml-3 mr-5 rounded-full" src="./img/users-default-image/user_basic.svg" alt="">
-                <h1 class="font-bold">Hans Gfaina</h1>
-                <span class="text-xs text-grayDesign">Pet Owner</span>
-                <button class="w-fulLjustify-center align-middle items-center row-span-2 ml-20" onclick="toggleHeart(this)">
-                    <i class="text-red-600 z-10 fa-regular fa-heart"></i>
-                </button>
-            </div>  
-            <div class="w-35.5 h-22.5 rounded-[20px] skew-x-12 bg-yellowDesign ml-8">
-                <img class= "w-36 h-28 absolute top-0 -mt-5 mx-auto left-1/2 transform -translate-x-1/2 -skew-x-12" src="./img/cat-show-2.png" alt="Cat-Logo">
-            </div>
-            <div class="w-max h-auto text-center m-1 ">
-                <p class="text-center rounded-full bg-rose-600 w-20 h-auto px-3 text-sm text-white mb-2">male</p>
-                <p class="text-center rounded-full bg-sky-400 w-20 h-auto px-3 text-sm text-white mb-2">persian</p>
-                <p class="text-center rounded-full bg-yellow-300 w-20 h-auto px-3 text-sm text-white mb-2">Brown</p>
-            </div>            
+        <div id="container-info">
+            <!-- Aquí se van a mostrar los gatos de los usuarios -->
         </div>
     </div>
 
     <!-- Shopping Cart -->
-    <div id="shopping-sidebar" class="fixed top-0 z-30 left-0 w-screen h-screen bg-whiteMainDesign text-black transform -translate-x-full transition-transform duration-300">
+    <div id="shopping-sidebar" class="fixed top-0 z-30 left-0 w-screen  h-screen overflow-y-auto bg-whiteMainDesign text-black transform -translate-x-full transition-transform duration-300">
         <!-- Contenido del sidebar -->
         <h2 class="p-4 text-lg font-semibold">Shopping Cart</h2>
         <ul>
@@ -125,7 +93,7 @@
 
     <!-- Adding Pet-->
     <!-- -translate-x-full -->
-    <div id="add-pet-sidebar" class="fixed top-0  -translate-x-full z-30 left-0 w-screen h-screen flex flex-col items-center justify-center bg-whiteMainDesign text-black transform  transition-transform duration-300">
+    <div id="add-pet-sidebar" class="fixed top-0  -translate-x-full z-30 left-0 w-screen  h-screen overflow-y-auto flex flex-col items-center justify-center bg-whiteMainDesign text-black transform  transition-transform duration-300">
         <!-- Contenido del sidebar -->
         <!-- Título -->
         <div  id="title-add"  class="fixed top-[35%] left-2/4 -translate-x-2/4  bg-cyanDesign rounded-2xl border-b-4 border-b-yellowDesign border-r-4 border-r-yellowDesign shadow-2xl p-2 transform-gpu transition-all  delay-200 z-0">
@@ -148,29 +116,24 @@
     
     
     <!-- Favorite Section -->
-    <div id="favorite-sidebar" class="fixed top-0 z-30 left-0 w-screen h-screen bg-whiteMainDesign text-black transform -translate-x-full transition-transform duration-300">
-        <!-- Contenido del sidebar -->
-        <h2 class="p-4 text-lg font-semibold">Favorite</h2>
-        <ul>
-            <li class="p-4">Mascota 1</li>
-            <li class="p-4">Mascota 2</li>
-            <li class="p-4">Producto 1</li>
-        </ul>
+    
+    <div id="favorite-sidebar" class="fixed top-0 z-30 left-0 -translate-x-full w-screen h-screen overflow-y-auto flex flex-col items-center justify-items-center bg-whiteMainDesign text-black transform  transition-transform duration-300">
+        <!-- Contenido del sidebar para favoritos-->
+        <h1 class="p-4 text-xl font-semibold mt-5 mb-10">Favorites</h1>
+        <div id="favorites-section" class="grid grid-cols-2 w-auto h-auto items-center justify-items-center gap-8 p-5 text-center ">
+
+        </div>
+        
     </div>
 
     <!-- Profile Section -->
-    <div id="profile-sidebar" class="fixed top-0 z-30 left-0 w-screen h-screen bg-whiteMainDesign text-black transform -translate-x-full transition-transform duration-300">
+    <!-- -translate-x-full -->
+    <div id="profile-sidebar" class="fixed top-0 z-30 left-0 -translate-x-full  w-screen h-screen overflow-y-auto bg-whiteMainDesign text-black transform  transition-transform duration-300">
         <!-- Contenido del sidebar -->
-        <h2 class="p-4 text-lg font-semibold">Profile</h2>
-        <ul>
-            <li class="p-4">Miguel Angel</li>
-            <li class="p-4">favoritos</li>
-            <li class="p-4">acerca de mi</li>
-        </ul>
     </div>
     
     <!--Card Footer-->
-    <div class="fixed bottom-0 left-2/4 -translate-x-2/4 z-50 bg-FooterDesign  w-72 h-14 rounded-t-3xl flex justify-around ">
+    <div class="fixed bottom-0 left-2/4 -translate-x-2/4 z-50 bg-FooterDesign  w-72 h-14 rounded-t-3xl flex justify-around">
         <button id="home" class="relative text-white"><i class="fa-solid fa-house hover:text-yellowDesign hover:animate-pulse"></i></button>
         <button id="shop" class="relative text-white"><i class="fa-solid fa-cart-shopping hover:text-yellowDesign hover:animate-pulse"></i></button>
         <button id="add" class="relative  text-white bg-cyanDesign w-10 h-11 mb-3 rounded-b-2xl "><i class="fa-solid fa-plus  hover:text-yellowDesign hover:animate-bounce"></i></button>

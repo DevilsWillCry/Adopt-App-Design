@@ -11,11 +11,7 @@ const spanLogin = document.getElementById('login-span');
 
 const buttonRegister = document.getElementById('register-button');
 const buttonLogin = document.getElementById('login-button');
-let usersData = [];
 
-document.addEventListener('DOMContentLoaded', async () => {
-    return usersData = await getDataUser(usersURL);
-})
 
 loginForm.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -23,7 +19,7 @@ loginForm.addEventListener('submit', async (e) => {
     const email = document.getElementById('email-login').value;
     const password = document.getElementById('password-login').value;
     // TODO: Validate inputs and make API call to login user
-    //usersData = getData(usersURL) -> Fetch
+    const usersData = await getDataUser(usersURL);
     const userLogin = usersData.find(user => user.email === email);
     
     // TODO: Check if user exists and password is correct
@@ -62,8 +58,8 @@ registerForm.addEventListener('submit', async (e) => {
         myPets: [],
         profileImage: ""
     };
-    //usersData = getData(usersURL) -> Fetch
     // TODO: Check if email already exists
+    const usersData = await getDataUser(usersURL);
     const checkUser = usersData.find(user => user.email === newUser.email && user.password === newUser.password);
     if (checkUser) {
         alert("Email already exists");

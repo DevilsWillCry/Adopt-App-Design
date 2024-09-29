@@ -5,5 +5,7 @@ export const getDataPets = async (userURL) => {
         return response.data;
     } catch (error) {
         alert(error.message);
+        console.error(error);
+        return null
     }
 };

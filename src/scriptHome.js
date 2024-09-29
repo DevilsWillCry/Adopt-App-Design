@@ -1,21 +1,48 @@
 import { getDataUser } from '../src/modules/users/getDataUser.js';
-import { usersURL } from '../src/modules/constants.js';
+import { petsURL, usersURL } from '../src/modules/constants.js';
+import { renderProfile } from './modules/users/renderProfile.js';
+import { getDataPets }  from '../src/modules/pets/getDataPets.js';
+import { renderPets } from './modules/pets/renderPets.js';
+import { renderImageHome } from './modules/users/renderImageHome.js';
+import { renderFavorites } from './modules/users/renderFavorites.js';
+
+// Variables globales
+let usersData, petData;
+
+
+
+const titleAdd = document.getElementById('title-add');
+const containerImageHome = document.getElementById('container-image-home');
+const containerInfo = document.getElementById('container-info');
+const profileImage = document.getElementById('profile-image-home');
+const favoriteSection = document.getElementById('favorites-section');
 
 document.addEventListener("DOMContentLoaded", async () => {
-    // Carga de datos y renderizado de la lista de mascotas
-    //const pets = await getPets();
-    const dataUsers = await getDataUser(usersURL);
-    console.log(dataUsers);
+    try {
+        const currentUser  = JSON.parse(localStorage.getItem('currentData'))
+        usersData = await getDataUser(usersURL);
+        petData = await getDataPets(petsURL);
+        renderPets(containerInfo,petData, usersData, currentUser)
+        renderImageHome(profileImage, currentUser)
+        renderFavorites(favoriteSection, petData, usersData, currentUser)
+        // TEMPORAL ///
+        renderProfile( elements.sidebars.profile, usersData.find(user => user.id === currentUser.id));
+        // TEMPORAL //
+        // Verifica si los datos fueron cargados correctamente
+        if (!usersData || !petData) {
+            console.error("Error: Datos no cargados correctamente");
+            return;
+        }
+
+    } catch (error) {
+        console.error("Error al cargar datos:", error);
+    }
 });
 
-
-function toggleHeart(button) {
-    const heartIcon = button.querySelector('i');
-    console.log(heartIcon);
-    heartIcon.classList.toggle('fa-regular');
-    heartIcon.classList.toggle('fa-solid')
-}
-
+// buttonHearth.addEventListener("click",  () => {
+//     const favIcon = document.getElementById("1")
+//     console.log(favIcon)
+// });
 
 // Seleccionamos los botones y sidebars en un objeto para facilitar el acceso
 const elements = {
@@ -24,7 +51,7 @@ const elements = {
         home: document.getElementById('home'),
         add: document.getElementById('add'),
         favorite: document.getElementById('favorite'),
-        profile: document.getElementById('profile')
+        profile: document.getElementById('profile'),
     },
     sidebars: {
         shopping: document.getElementById('shopping-sidebar'),
@@ -34,10 +61,10 @@ const elements = {
     }
 };
 
-const titleAdd = document.getElementById('title-add');
 
 // Inicializamos el botón de inicio con la clase 'text-yellowDesign'
 elements.buttons.home.classList.add('text-yellowDesign');
+
 
 
 // Función para ocultar todos los sidebars y desactivar todos los botones
@@ -73,8 +100,10 @@ elements.buttons.favorite.addEventListener('click', () => {
     titleAdd.classList.add('top-[35%]');
 });
 
-elements.buttons.profile.addEventListener('click', () => {
+elements.buttons.profile.addEventListener('click', async () => {
     showSidebar(elements.sidebars.profile, elements.buttons.profile);
+    const currentUser =JSON.parse(localStorage.getItem('currentData')) ;
+    renderProfile( elements.sidebars.profile, usersData.find(user => user.id === currentUser.id));
     titleAdd.classList.remove('top-[16%]');
     titleAdd.classList.add('top-[35%]');
 });
@@ -85,3 +114,12 @@ elements.buttons.add.addEventListener('click', () => {
     titleAdd.classList.add('top-[16%]');
 });
 
+
+
+profileImage.addEventListener('click', async() => {
+    showSidebar(elements.sidebars.profile, elements.buttons.profile);
+    const currentUser =JSON.parse(localStorage.getItem('currentData')) ;
+    renderProfile( elements.sidebars.profile, usersData.find(user => user.id === currentUser.id));
+    titleAdd.classList.remove('top-[16%]');
+    titleAdd.classList.add('top-[35%]');
+});
