@@ -1,13 +1,25 @@
+import { petsURL, usersURL, productsURL } from '../src/modules/constants.js';
+
 import { getDataUser } from '../src/modules/users/getDataUser.js';
-import { petsURL, usersURL } from '../src/modules/constants.js';
-import { renderProfile } from './modules/users/renderProfile.js';
+import { postDataUser } from '../src/modules/users/postDataUser.js';
+import { patchDataUser } from './modules/users/patchDataUser.js';
+
 import { getDataPets }  from '../src/modules/pets/getDataPets.js';
+import { postDataPets } from '../src/modules/pets/postDataPets.js';
+
+import { getDataProducts } from './modules/products/getDataProducts.js';
+
+import { renderProfile } from './modules/users/renderProfile.js';
 import { renderPets } from './modules/pets/renderPets.js';
+import { renderProducts } from './modules/products/renderProducts.js';
 import { renderImageHome } from './modules/users/renderImageHome.js';
 import { renderFavorites } from './modules/users/renderFavorites.js';
+import { renderCart } from './modules/shoppingCart/renderCart.js';
+import { renderCrudProduct } from './modules/crud/renderCrudProduct.js';
+import { renderCrudPets} from './modules/crud/renderCrudPets.js';
 
 // Variables globales
-let usersData, petData;
+
 
 
 
@@ -16,15 +28,22 @@ const containerImageHome = document.getElementById('container-image-home');
 const containerInfo = document.getElementById('container-info');
 const profileImage = document.getElementById('profile-image-home');
 const favoriteSection = document.getElementById('favorites-section');
+const shoppingSection = document.getElementById('shopping-section');
+
 
 document.addEventListener("DOMContentLoaded", async () => {
     try {
         const currentUser  = JSON.parse(localStorage.getItem('currentData'))
-        usersData = await getDataUser(usersURL);
-        petData = await getDataPets(petsURL);
+        const usersData = await getDataUser(usersURL);
+        const petData = await getDataPets(petsURL);
+        const productData = await getDataProducts(productsURL);
+
         renderPets(containerInfo,petData, usersData, currentUser)
+        renderProducts(containerInfo, productData, usersData, currentUser)
+        
         renderImageHome(profileImage, currentUser)
-        renderFavorites(favoriteSection, petData, usersData, currentUser)
+        renderCart(shoppingSection, petData, productData, usersData, currentUser)
+        renderFavorites(favoriteSection, petData, productData, usersData, currentUser)
         // TEMPORAL ///
         renderProfile( elements.sidebars.profile, usersData.find(user => user.id === currentUser.id));
         // TEMPORAL //
@@ -39,12 +58,18 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 });
 
-// buttonHearth.addEventListener("click",  () => {
-//     const favIcon = document.getElementById("1")
-//     console.log(favIcon)
-// });
 
-// Seleccionamos los botones y sidebars en un objeto para facilitar el acceso
+window.addEventListener('load', () => {
+    // Obtener la posición guardada del scroll
+    const savedScrollPosition = sessionStorage.getItem('scrollPosition');
+    // Si existe una posición guardada, restaurarla
+    if (savedScrollPosition !== null) {        
+        window.scroll(0, 700);
+        // Limpiar el localStorage para no afectar futuras recargas
+        sessionStorage.removeItem('scrollPosition');
+    }
+});
+
 const elements = {
     buttons: {
         shop: document.getElementById('shop'),
@@ -83,43 +108,113 @@ function showSidebar(sidebar, button) {
 // Añadimos los eventos a cada botón
 elements.buttons.shop.addEventListener('click', () => {
     showSidebar(elements.sidebars.shopping, elements.buttons.shop);
-    titleAdd.classList.remove('top-[16%]');
-    titleAdd.classList.add('top-[35%]');
 });
 
 elements.buttons.home.addEventListener('click', () => {
     hideAllSidebars(); // Ocultamos todos los sidebars
     elements.buttons.home.classList.add('text-yellowDesign'); // Activamos solo el botón de inicio
-    titleAdd.classList.remove('top-[16%]');
-    titleAdd.classList.add('top-[35%]');
 });
 
 elements.buttons.favorite.addEventListener('click', () => {
     showSidebar(elements.sidebars.favorite, elements.buttons.favorite);
-    titleAdd.classList.remove('top-[16%]');
-    titleAdd.classList.add('top-[35%]');
 });
 
 elements.buttons.profile.addEventListener('click', async () => {
     showSidebar(elements.sidebars.profile, elements.buttons.profile);
-    const currentUser =JSON.parse(localStorage.getItem('currentData')) ;
-    renderProfile( elements.sidebars.profile, usersData.find(user => user.id === currentUser.id));
-    titleAdd.classList.remove('top-[16%]');
-    titleAdd.classList.add('top-[35%]');
 });
 
-elements.buttons.add.addEventListener('click', () => {
+
+elements.buttons.add.addEventListener('click', async () => {
     showSidebar(elements.sidebars.addPet, elements.buttons.add);
-    titleAdd.classList.remove('top-[35%]');
-    titleAdd.classList.add('top-[16%]');
 });
-
 
 
 profileImage.addEventListener('click', async() => {
     showSidebar(elements.sidebars.profile, elements.buttons.profile);
     const currentUser =JSON.parse(localStorage.getItem('currentData')) ;
     renderProfile( elements.sidebars.profile, usersData.find(user => user.id === currentUser.id));
-    titleAdd.classList.remove('top-[16%]');
-    titleAdd.classList.add('top-[35%]');
+});
+
+// Selección de los elementos
+const openModalProduct= document.getElementById('openModalProduct');
+const openModalPet= document.getElementById('openModalPet');
+const crudSection = document.getElementById('crud-section');
+
+const closeModalBtn = document.getElementById('closeModalBtn');
+const modal = document.getElementById('modal');
+
+// Abrir modal
+openModalProduct.addEventListener('click', async () => {
+    const currentUser  = JSON.parse(localStorage.getItem('currentData'))
+    const usersData = await getDataUser(usersURL);
+
+    if((openModalProduct.querySelector('#product-name').checked)){
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        openModalPet.querySelector('#pet-name').checked = false;
+        renderCrudProduct(crudSection)
+        const formProduct = document.getElementById('form-product');
+        formProduct.addEventListener('submit', () => {
+            // Obtener los valores del formulario
+            const productName = document.getElementById('product-name').value;
+            const productDescription = document.getElementById('product-description').value;
+            const productAgeRange = document.getElementById('product-ageRange').value;
+            const productTypeFood = document.getElementById('typeFood').value;
+            const productPrice = document.getElementById('product-price').value;
+
+            // Validar los valores
+            if (!productName ||!productAgeRange ||!productTypeFood ||!productPrice) {
+                alert('Todos los campos son obligatorios');
+                return;
+            }
+
+            const userMyPet = usersData.find(user => 
+                user.id == currentUser.id
+            );
+            
+            const myProductList = userMyPet.myProducts;
+            const idProduct = crypto.randomUUID();
+
+            myProductList.push({id:idProduct});
+            const newPet = {
+                id: idProduct,
+                images:[],
+                name: productName,
+                description: productDescription,
+                ageRange: productAgeRange,
+                typeFood: productTypeFood,
+                productPrice: productPrice,
+            }
+            patchDataUser(usersURL, currentUser.id, {myProducts: myProductList})
+            postDataPets(productsURL, newPet)
+        });
+
+    }
+});
+openModalPet.addEventListener('click', () => {
+    console.log(openModalPet.querySelector('#pet-name').checked)
+    if((openModalPet.querySelector('#pet-name').checked)){
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        openModalProduct.querySelector('#product-name').checked = false;
+        renderCrudPets(crudSection)
+    }
+});
+
+
+// Cerrar modal
+closeModalBtn.addEventListener('click', () => {
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    
+});
+
+
+
+// Cerrar modal al hacer clic fuera del contenido
+window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+    }
 });

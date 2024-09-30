@@ -61,11 +61,21 @@ export const renderPets = async (container, petsObj = [], usersObj = [], current
             const favoritePet = userObjectFav.favorites.find(fav => fav.id === e.target.id)
             if (!favoritePet) {
                 favList.push({id: e.target.id})
-                patchDataUser(usersURL, currentUser.id, {favorites:favList} )
+                await patchDataUser(usersURL, currentUser.id, {favorites:favList} )
+                // Obtener la posición actual del scroll vertical
+                const scrollPosition = window.scrollY;       
+                // Guardar la posición en localStorage
+                sessionStorage.setItem('scrollPosition', scrollPosition);
+                window.location.reload()
             }
             else{
                 favList = favList.filter(fav => fav.id !== e.target.id)
-                patchDataUser(usersURL, currentUser.id, {favorites:favList} )
+                await patchDataUser(usersURL, currentUser.id, {favorites:favList} )
+                // Obtener la posición actual del scroll vertical
+                const scrollPosition = window.scrollY;       
+                // Guardar la posición en localStorage
+                sessionStorage.setItem('scrollPosition', scrollPosition);
+                window.location.reload()
             }
         })
     })
