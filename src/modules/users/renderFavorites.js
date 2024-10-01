@@ -39,6 +39,7 @@ export const renderFavorites = (container, petsObj = [], productsObj = [], users
                     let favList = userObjectFav.favorites;
                     const deleteFavPet = favList.filter(fav => fav.id !== petId)
                     await patchDataUser(usersURL, currentUser.id, {favorites: deleteFavPet})
+                    window.location.reload();
                 });
             } else {
                 console.error(`No se encontró el botón con id ${pet.id}`);
