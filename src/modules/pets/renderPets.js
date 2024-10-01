@@ -11,9 +11,12 @@ export const renderPets = async (container, petsObj = [], usersObj = [], current
     petsObj.forEach((pet) => {
         const div = document.createElement('div');
         //Encontrar usuarios que tengan pet y recomendar
-        const FindUserPets = usersObj.find(user => 
-            user.myPets.find(myPet => myPet.id === pet.id)
-        );
+        let FindUserPets = []
+
+        FindUserPets = usersObj.find(user => 
+        user.myPets.find(myPet => myPet.id === pet.id) );
+
+        
         //Encontrar usuarios que tengan favoritos
         const setFavoriteUser = usersObj.find(user => 
             user.id == currentUser.id

@@ -43,7 +43,13 @@
       "phone": "317-846-5152",
       "favorites": [
         {
+          "id": "2"
+        },
+        {
           "id": "1"
+        },
+        {
+          "id": "10"
         }
       ],
       "cart": [],
@@ -56,7 +62,7 @@
         }
       ],
       "myProducts": [],
-      "profileImage": "https://img.freepik.com/psd-gratis/ilustracion-3d-persona-pelo-punk-chaqueta_23-2149436198.jpg?t=st=1727759148~exp=1727762748~hmac=aa9c86fbaa118dbfbe44d229bd3325526bf37b8d99e93dcfc2eb4914331a692a&w=826"
+      "profileImage": "https://img.freepik.com/psd-gratis/3d-ilustracion-persona-gafas-sol_23-2149436188.jpg?w=826&t=st=1727758987~exp=1727759587~hmac=67383d1196194e6e92c28bf9acfde674bb56a100b6a9bac904978f313586b9f4"
     },
     {
       "id": "a3edc998-3562-4c3a-9405-94ed088ec085",
@@ -65,11 +71,15 @@
       "password": "password123",
       "confirmPassword": "password123",
       "phone": "317-455-6789",
-      "favorites": [],
+      "favorites": [
+        {
+          "id": "1"
+        }
+      ],
       "cart": [],
       "myPets": [],
       "myProducts": [],
-      "profileImage": ""
+      "profileImage": "https://img.freepik.com/psd-gratis/ilustracion-3d-persona-pelo-punk-chaqueta_23-2149436198.jpg?t=st=1727759148~exp=1727762748~hmac=aa9c86fbaa118dbfbe44d229bd3325526bf37b8d99e93dcfc2eb4914331a692a&w=826"
     },
     {
       "id": "c8829444-2782-4992-92ba-95766d3fab17",

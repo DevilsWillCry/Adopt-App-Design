@@ -3,6 +3,7 @@ import { renderPets } from "../pets/renderPets.js";
 import { patchDataUser } from "./patchDataUser.js";
 import { getDataPets }  from '../pets/getDataPets.js';
 import { getDataUser } from "./getDataUser.js";
+import { renderPetsProfile } from "./renderPetsProfile.js";
 
 export const renderProfile = async (container, obj ) => {
     if ((obj == {})) {
@@ -29,7 +30,10 @@ export const renderProfile = async (container, obj ) => {
             <p class="card-text ml-[25%]"><i class="fa-solid fa-envelope"></i>  ${obj.email}</p> 
             <p class="card-text ml-[25%]"><i class="fa-solid fa-phone"></i> ${obj.phone}</p>
         </div>
-        <div id='my-pets-container'>
+        <div class="mt-10 justify-center items-center text-center">
+            <h1 class="text-2xl font-bold shadow-xl rounded-2xl mb-4 bg-yellowDesign">My Pets</h1>
+            <div id='my-pets-container' class="mb-20">
+            </div>
         </div>
     </div>
 
@@ -48,7 +52,7 @@ export const renderProfile = async (container, obj ) => {
                 <img src="https://img.freepik.com/psd-gratis/ilustracion-3d-hombre-negocios-gafas_23-2149436194.jpg?t=st=1727759173~exp=1727762773~hmac=5d954731b8def54b80056d92dd8d97f83ec3d59ccc05253147fe7dc5990272c9&w=826">
                 <img src="https://img.freepik.com/free-psd/3d-illustration-person_23-2149436192.jpg?t=st=1727759233~exp=1727759833~hmac=f5279fdbdebf9b93d61f0bad84b7b3b42fb7afa4843f90caa4d36cdcb01ecdcc">
             </div>
-            <div class="flex justify-end mt-4 ">
+            <div class="flex justify-end mt-4">
                 <button id="close-modal" class="bg-red-500 text-white p-3 rounded hover:bg-red-700">Cerrar</button>
             </div>
         </div>
@@ -57,11 +61,26 @@ export const renderProfile = async (container, obj ) => {
     const profileImage = document.getElementById('profile-image')
     const selectionIcon = document.getElementById('icon-modal')
     const myPetsContainer = document.getElementById('my-pets-container')
+    const buttonProfile = document.querySelector('#footer-sidebar #profile')
 
-    profileImage.addEventListener('click', async () =>{
+    
+    buttonProfile.addEventListener('click', async () =>{
         const currentUser  = JSON.parse(localStorage.getItem('currentData'))
         const petsData = await getDataPets(petsURL)
         const usersData = await getDataUser(usersURL)
+        console.log("HOLA- RenderProfile");
+        
+        const userFind =  usersData.find(user =>
+            user.id === currentUser.id
+        )
+        // Extrae los id de las mascotas que pertenecen al usuario actual
+        const myPetsIds = userFind.myPets.map(pet => pet.id); 
+
+        // Filtra los datos de las mascotas que coinciden con los id en myPets
+        const filteredPets = petsData.filter(pet => myPetsIds.includes(pet.id));
+
+        renderPetsProfile(myPetsContainer, filteredPets ,[userFind])
+
     })
     profileImage.addEventListener('click', () => {
         selectionIcon.classList.remove('hidden');

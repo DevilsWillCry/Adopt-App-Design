@@ -37,7 +37,6 @@ export const renderCart = (container, petsObj = [], productsObj = [], usersObj =
             
         const FindShopExist = FindCurrentUser.cart.find(inCart =>
             inCart.id === product.id)
-        console.log(FindShopExist);
         if (FindShopExist){
             // Add your cart rendering logic here
             div.classList.add('flex', 'flex-row', 'justify-items-start', 'items-center',  'w-5/6', 'h-auto', 'bg-whiteDesign','rounded-2xl','shadow-2xl','p-4', 'text-center', 'border-b-4', 'border-b-slate-600', 'border-r-4', 'border-r-slate-600', 'cursor-pointer', 'transition-all', 'hover:scale-110')

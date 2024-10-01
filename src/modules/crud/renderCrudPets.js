@@ -62,7 +62,7 @@ export const renderCrudPets = (container) =>{
                         class="block w-full border border-gray-300 rounded-lg p-2 mb-4 focus:ring-indigo-500 focus:border-indigo-500">
 
                 <!-- Submit Button -->
-                <button type="submit" class="w-full bg-yellowDesign text-white p-2 rounded-lg hover:bg-yellow-600 focus:ring-2 focus:ring-yellow-600">Añadir</button>
+                <button id="submit-crud" type="submit" class="w-full bg-yellowDesign text-white p-2 rounded-lg hover:bg-yellow-600 focus:ring-2 focus:ring-yellow-600">Añadir</button>
         </form>
         `;
 
