@@ -3,9 +3,12 @@
     "tailwindcss": "^3.4.12"
   },
   "scripts": {
-    "dev": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch"
+    "dev": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch",
+    "start": "node index.js"
   },
   "dependencies": {
-    "axios": "^1.7.7"
+    "axios": "^1.7.7",
+    "cors": "^2.8.5",
+    "json-serve": "^0.1.0"
   }
 }
