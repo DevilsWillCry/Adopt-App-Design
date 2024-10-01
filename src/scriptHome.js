@@ -19,10 +19,6 @@ import { renderCrudProduct } from './modules/crud/renderCrudProduct.js';
 import { renderCrudPets} from './modules/crud/renderCrudPets.js';
 
 // Variables globales
-
-
-
-
 const titleAdd = document.getElementById('title-add');
 const containerImageHome = document.getElementById('container-image-home');
 const containerInfo = document.getElementById('container-info');
@@ -32,8 +28,12 @@ const shoppingSection = document.getElementById('shopping-section');
 
 
 document.addEventListener("DOMContentLoaded", async () => {
+    //Verificar si hay cuenta activa en localStorage
+    const currentUser = JSON.parse(localStorage.getItem('currentData'));
+    if (!currentUser) {
+        window.location.href = "./pages/login-register.html";
+    }
     try {
-        const currentUser  = JSON.parse(localStorage.getItem('currentData'))
         const usersData = await getDataUser(usersURL);
         const petData = await getDataPets(petsURL);
         const productData = await getDataProducts(productsURL);
@@ -41,14 +41,16 @@ document.addEventListener("DOMContentLoaded", async () => {
         renderPets(containerInfo,petData, usersData, currentUser)
         renderProducts(containerInfo, productData, usersData, currentUser)
         
-        renderImageHome(profileImage, currentUser)
+        const updateCurrentUser = usersData.find(user => user.id === currentUser.id)
+
+        renderImageHome(profileImage, updateCurrentUser)
         renderCart(shoppingSection, petData, productData, usersData, currentUser)
         renderFavorites(favoriteSection, petData, productData, usersData, currentUser)
         // TEMPORAL ///
         renderProfile( elements.sidebars.profile, usersData.find(user => user.id === currentUser.id));
         // TEMPORAL //
         // Verifica si los datos fueron cargados correctamente
-        if (!usersData || !petData) {
+        if (!usersData || !petData || !productData || !currentUser) {
             console.error("Error: Datos no cargados correctamente");
             return;
         }
@@ -187,17 +189,67 @@ openModalProduct.addEventListener('click', async () => {
             }
             patchDataUser(usersURL, currentUser.id, {myProducts: myProductList})
             postDataPets(productsURL, newPet)
+            //message to creation succesfull
+            alert('Producto Creado con exito')
         });
-
     }
 });
-openModalPet.addEventListener('click', () => {
-    console.log(openModalPet.querySelector('#pet-name').checked)
+openModalPet.addEventListener('click', async () => {
+    const currentUser  = JSON.parse(localStorage.getItem('currentData'))
+    const usersData = await getDataUser(usersURL);
+
     if((openModalPet.querySelector('#pet-name').checked)){
+        openModalProduct.querySelector('#product-name').checked = false;
         modal.classList.remove('hidden');
         modal.classList.add('flex');
-        openModalProduct.querySelector('#product-name').checked = false;
-        renderCrudPets(crudSection)
+
+        renderCrudPets(crudSection);
+        
+        const formPet = document.getElementById('form-pet');
+        formPet.addEventListener('submit', () => {
+            // Obtener los valores del formulario
+            const petName = document.getElementById('name').value;
+            const petGender = document.getElementById('gender').value;
+            const petBreed = document.getElementById('breed').value;
+            const petEyeColor  = document.getElementById('eyeColor').value;
+            const petPersonality =  document.getElementById('personality').value;
+            const petMedicalInfo = document.getElementById('medicalInfo').value;
+            const petBiography = document.getElementById('biography').value;
+            const petAbout = document.getElementById('aboutPet').value;
+            const petAdoptionPrice = document.getElementById('adoptionPrice').value;
+
+            // Validar los valores
+            if (!petName ||!petGender ||!petBreed ||!petEyeColor ||!petPersonality ||!petMedicalInfo ||!petBiography ||!petAbout ||!petAdoptionPrice) {
+                alert('Todos los campos son obligatorios');
+                return;
+            }
+
+            const userMyPet = usersData.find(user => 
+                user.id == currentUser.id
+            );
+            
+            const myPetList = userMyPet.myPets;
+            const idPet = crypto.randomUUID();
+
+            myPetList.push({id:idPet});
+            const newPet = {
+                id: idPet,
+                images:[],
+                name: petName,
+                gender: petGender,
+                breed: petBreed,
+                eyeColor: petEyeColor,
+                personality: petPersonality,
+                medicalInfo: petMedicalInfo,
+                biography: petBiography,
+                aboutPet: petAbout,
+                adoptionPrice: petAdoptionPrice,
+            }
+            patchDataUser(usersURL, currentUser.id, {myPets: myPetList})
+            postDataPets(petsURL, newPet)
+            //message to creation succesfull
+            alert('Producto Creado con exito')
+        });
     }
 });
 

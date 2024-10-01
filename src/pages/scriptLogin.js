@@ -56,6 +56,7 @@ registerForm.addEventListener('submit', async (e) => {
         favorites: [],
         cart: [],
         myPets: [],
+        myProducts: [],
         profileImage: ""
     };
     // TODO: Check if email already exists

@@ -135,9 +135,10 @@
     
     
     <!-- Favorite Section -->
-    <div id="favorite-sidebar" class="fixed top-0 z-30 left-0 -translate-x-full w-screen h-screen overflow-y-auto flex flex-col items-center justify-items-center bg-whiteMainDesign text-black transform  transition-transform duration-300">
-        <h1 class="p-4 text-xl font-bold mt-5 mb-10">Favorites</h1>
-        <div id="favorites-section" class="grid grid-cols-2 w-auto h-screen overflow-y-auto gap-8 p-5  items-start justify-items-center ">
+    <!-- -translate-x-full -->
+    <div id="favorite-sidebar" class="fixed top-0 z-30 left-0  w-screen h-screen  -translate-x-full overflow-y-auto flex flex-col items-center justify-items-center bg-whiteMainDesign text-black transform  transition-transform duration-300">
+        <h1 class="p-4 text-xl font-bold mt-5 mb-5">Favorites</h1>
+        <div id="favorites-section" class="grid max-lg:grid-cols-2 lg:grid-cols-4 w-[90vw] h-[80%] scroll-smooth overflow-y-auto gap-5 p-5  items-start justify-items-center bg-whiteMainDesign shadow-2xl rounded-2xl">
         <!-- Contenido del sidebar para favoritos-->
         </div>
         
@@ -145,18 +146,21 @@
 
     <!-- Profile Section -->
     <!-- -translate-x-full -->
-    <div id="profile-sidebar" class="fixed top-0 z-30 left-0 -translate-x-full  w-screen h-screen overflow-y-auto bg-whiteMainDesign text-black transform  transition-transform duration-300">
+    <div id="profile-sidebar" class="fixed top-0 z-30 left-0  -translate-x-full  w-screen h-screen overflow-y-auto bg-whiteMainDesign text-black transform  transition-transform duration-300">
         <!-- Contenido del sidebar -->
     </div>
     
     <!--Card Footer-->
-    <div class="fixed bottom-0 left-2/4 -translate-x-2/4 z-50 bg-FooterDesign  w-72 h-14 rounded-t-3xl flex justify-around">
+    <div class="fixed bottom-0 left-2/4 -translate-x-2/4 z-50 bg-FooterDesign  w-full lg:w-3/4 xl:w-2/4 h-14 rounded-t-3xl flex justify-around">
         <button id="home" class="relative text-white"><i class="fa-solid fa-house hover:text-yellowDesign hover:animate-pulse"></i></button>
         <button id="shop" class="relative text-white"><i class="fa-solid fa-cart-shopping hover:text-yellowDesign hover:animate-pulse"></i></button>
         <button id="add" class="relative  text-white bg-cyanDesign w-10 h-11 mb-3 rounded-b-2xl "><i class="fa-solid fa-plus  hover:text-yellowDesign hover:animate-bounce"></i></button>
         <button id="favorite" class="relative text-white"><i class="fa-solid fa-heart hover:text-yellowDesign hover:animate-pulse"></i></button>
         <button id="profile" class="relative text-white "><i class="fa-solid fa-user hover:text-yellowDesign hover:animate-pulse"></i></button>
     </div>
+    
+    
+
 
 </body>
 

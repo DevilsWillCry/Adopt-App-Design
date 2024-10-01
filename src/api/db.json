@@ -9,9 +9,6 @@
       "favorites": [
         {
           "id": "4"
-        },
-        {
-          "id": "1"
         }
       ],
       "cart": [
@@ -33,12 +30,9 @@
       "myProducts": [
         {
           "id": "10"
-        },
-        {
-          "id": "59caa075-6ec5-4331-82ab-b0de205fd0c0"
         }
       ],
-      "profileImage": "https://img.freepik.com/psd-gratis/3d-ilustracion-persona-gafas_23-2149436185.jpg"
+      "profileImage": "https://img.freepik.com/psd-gratis/3d-ilustracion-persona-cabello-rosado_23-2149436186.jpg?t=st=1727759089~exp=1727762689~hmac=0a237906f66d5b7b60414cea05ada95dcdf4529286e762cb7f74ec9186bf8afa&w=826"
     },
     {
       "id": "1a0ec69a-bf9b-477e-81c5-074b632a7904",
@@ -50,6 +44,9 @@
       "favorites": [
         {
           "id": "3"
+        },
+        {
+          "id": "4"
         }
       ],
       "cart": [],
@@ -62,7 +59,7 @@
         }
       ],
       "myProducts": [],
-      "profileImage": "https://img.freepik.com/psd-gratis/3d-ilustracion-persona-gafas-sol_23-2149436188.jpg?t=st=1727559897~exp=1727560497~hmac=3cdc243cc7cf0813cee31e6db90727c50c11faf3179b87bc156b2bbb74811b8e"
+      "profileImage": "https://img.freepik.com/free-psd/3d-illustration-person_23-2149436192.jpg?t=st=1727759233~exp=1727759833~hmac=f5279fdbdebf9b93d61f0bad84b7b3b42fb7afa4843f90caa4d36cdcb01ecdcc"
     },
     {
       "id": "a3edc998-3562-4c3a-9405-94ed088ec085",
@@ -184,15 +181,6 @@
       "description": "Royal Canin Puppy food provides a balanced diet rich in vitamins and proteins to support the growth of your puppy.",
       "ageRange": "Puppies",
       "typeFood": "Dry"
-    },
-    {
-      "id": "59caa075-6ec5-4331-82ab-b0de205fd0c0",
-      "images": [],
-      "name": "on",
-      "description": "ASDASD",
-      "ageRange": "12",
-      "typeFood": "wet",
-      "productPrice": "1234"
     }
   ]
 }
