@@ -101,6 +101,34 @@
         }
       ],
       "profileImage": "https://img.freepik.com/psd-gratis/3d-ilustracion-persona-gafas_23-2149436189.jpg"
+    },
+    {
+      "id": "2072c1c4-81c8-4c65-a005-d3095170555f",
+      "username": "Miguel Angel",
+      "email": "miguel.delta25@gmail.com",
+      "password": "password123",
+      "confirmPassword": "password123",
+      "phone": "317-846-5152",
+      "favorites": [
+        {
+          "id": "1"
+        },
+        {
+          "id": "10"
+        }
+      ],
+      "cart": [],
+      "myPets": [
+        {
+          "id": "4db30bcb-e5a6-4a41-9381-998e5978d1be"
+        }
+      ],
+      "myProducts": [
+        {
+          "id": "3021c48e-7fc7-4877-a7b5-d2f64a49a5fe"
+        }
+      ],
+      "profileImage": "https://img.freepik.com/psd-gratis/ilustracion-3d-persona-pelo-punk-chaqueta_23-2149436198.jpg?t=st=1727759148~exp=1727762748~hmac=aa9c86fbaa118dbfbe44d229bd3325526bf37b8d99e93dcfc2eb4914331a692a&w=826"
     }
   ],
   "pets": [
@@ -164,6 +192,19 @@
       "biography": "Hey, I’m Ramon I’m a young, energetic lab who loves to have fun. My favorite activities include playing fetch, swimming, and going on long walks. I’m looking for a family that loves outdoor adventures as much as I do!",
       "aboutPet": "Ramon is a 2-year-old Labrador with boundless energy. He needs an active home that can provide him with plenty of exercise and mental stimulation. Oakley is great with kids and would thrive in a family that enjoys spending time outdoors.",
       "adoptionPrice": 100
+    },
+    {
+      "id": "4db30bcb-e5a6-4a41-9381-998e5978d1be",
+      "images": [],
+      "name": "Ramon",
+      "gender": "female",
+      "breed": "siames",
+      "eyeColor": "azules",
+      "personality": "lorem ipsum",
+      "medicalInfo": "vacunado",
+      "biography": "lorem ipsum",
+      "aboutPet": "es un gato travieso",
+      "adoptionPrice": "123"
     }
   ],
   "products": [
@@ -188,6 +229,15 @@
       "description": "Royal Canin Puppy food provides a balanced diet rich in vitamins and proteins to support the growth of your puppy.",
       "ageRange": "Puppies",
       "typeFood": "Dry"
+    },
+    {
+      "id": "3021c48e-7fc7-4877-a7b5-d2f64a49a5fe",
+      "images": [],
+      "name": "on",
+      "description": "Producto para gatos",
+      "ageRange": "5",
+      "typeFood": "dry",
+      "productPrice": "13"
     }
   ]
 }
