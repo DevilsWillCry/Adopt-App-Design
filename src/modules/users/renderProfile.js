@@ -68,7 +68,6 @@ export const renderProfile = async (container, obj ) => {
         const currentUser  = JSON.parse(localStorage.getItem('currentData'))
         const petsData = await getDataPets(petsURL)
         const usersData = await getDataUser(usersURL)
-        console.log("HOLA- RenderProfile");
         
         const userFind =  usersData.find(user =>
             user.id === currentUser.id
