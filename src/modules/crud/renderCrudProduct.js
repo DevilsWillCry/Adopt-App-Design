@@ -4,7 +4,7 @@ export const renderCrudProduct = (container) =>{
     const div = document.createElement('div');
     div.classList.add('crud-product', 'flex', 'flex-col', 'flex-nowrap', 'flex-shrink-0', 'h-screen', 'overflow-auto');
     div.innerHTML = `
-        <form id="form-product" class="bg-white rounded-lg shadow-lg w-full max-w-full md:max-w-lg lg:max-w-2xl p-4">
+        <form id="form-product" class="bg-white p-4 sm:p-6 rounded-lg shadow-lg w-full max-w-full sm:max-w-md mb-14">
         <h2 class="text-2xl font-semibold text-center mb-6">Product Information</h2>
 
         <!-- Images Array -->
@@ -37,7 +37,7 @@ export const renderCrudProduct = (container) =>{
 
         <!-- Product Price -->
         <label for="product-price" class="block text-sm font-medium text-gray-700 mb-1">Product Price</label>
-        <input type="number" id="product-price" name="productPrice" placeholder="Enter product price" 
+        <input type="number" step="any"  id="product-price" name="productPrice" placeholder="Enter product price" 
             class="block w-full border border-gray-300 rounded-lg p-2 mb-4 focus:ring-indigo-500 focus:border-indigo-500">
         <!-- Submit Button -->
         <button type="submit" class="w-full bg-yellowDesign text-black p-2 rounded-lg hover:bg-yellow-600 focus:ring-2 focus:ring-yellow-600">Añadir</button>

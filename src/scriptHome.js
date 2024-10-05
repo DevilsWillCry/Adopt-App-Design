@@ -156,7 +156,7 @@ openModalProduct.addEventListener('click', async () => {
         openModalPet.querySelector('#pet-name').checked = false;
         renderCrudProduct(crudSection)
         const formProduct = document.getElementById('form-product');
-        formProduct.addEventListener('submit', () => {
+        formProduct.addEventListener('submit', async () => {
             // Obtener los valores del formulario
             const productName = document.getElementById('product-name').value;
             const productDescription = document.getElementById('product-description').value;
@@ -187,8 +187,8 @@ openModalProduct.addEventListener('click', async () => {
                 typeFood: productTypeFood,
                 productPrice: productPrice,
             }
-            patchDataUser(usersURL, currentUser.id, {myProducts: myProductList})
-            postDataPets(productsURL, newPet)
+            await patchDataUser(usersURL, currentUser.id, {myProducts: myProductList})
+            await postDataPets(productsURL, newPet)
             //message to creation succesfull
             alert('Producto Creado con exito')
         });
@@ -206,7 +206,7 @@ openModalPet.addEventListener('click', async () => {
         renderCrudPets(crudSection);
         
         const formPet = document.getElementById('form-pet');
-        formPet.addEventListener('submit', () => {
+        formPet.addEventListener('submit', async () => {
             // Obtener los valores del formulario
             const petName = document.getElementById('name').value;
             const petGender = document.getElementById('gender').value;
@@ -245,8 +245,8 @@ openModalPet.addEventListener('click', async () => {
                 aboutPet: petAbout,
                 adoptionPrice: petAdoptionPrice,
             }
-            patchDataUser(usersURL, currentUser.id, {myPets: myPetList})
-            postDataPets(petsURL, newPet)
+            await patchDataUser(usersURL, currentUser.id, {myPets: myPetList})
+            await postDataPets(petsURL, newPet)
             //message to creation succesfull
             alert('Producto Creado con exito')
         });
