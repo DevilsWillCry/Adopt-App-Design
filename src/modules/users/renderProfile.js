@@ -104,7 +104,7 @@ export const renderProfile = async (container, obj ) => {
             const selectedIcon = e.target.src;
             // Actualiza la imagen del perfil con el ícono seleccionado
             //document.getElementById('profile-image').src = `${selectedIcon}`;
-            patchDataUser(usersURL, currentUser.id, {profileImage: `${selectedIcon}`})
+            await patchDataUser(usersURL, currentUser.id, {profileImage: `${selectedIcon}`})
             document.getElementById('icon-modal').classList.add('hidden');
             window.location.reload()
         });

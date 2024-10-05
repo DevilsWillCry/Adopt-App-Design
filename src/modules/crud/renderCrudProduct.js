@@ -2,7 +2,7 @@ export const renderCrudProduct = (container) =>{
     // Render CRUD here
     container.innerHTML = '';    
     const div = document.createElement('div');
-    div.classList.add('crud-product', 'flex', 'flex-col', 'flex-nowrap', 'flex-shrink-0');
+    div.classList.add('crud-product', 'flex', 'flex-col', 'flex-nowrap', 'flex-shrink-0', 'h-screen', 'overflow-auto');
     div.innerHTML = `
         <form id="form-product" class="bg-white rounded-lg shadow-lg w-full max-w-full md:max-w-lg lg:max-w-2xl p-4">
         <h2 class="text-2xl font-semibold text-center mb-6">Product Information</h2>
