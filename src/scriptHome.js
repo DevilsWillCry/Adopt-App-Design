@@ -147,7 +147,6 @@ const modal = document.getElementById('modal');
 
 // Abrir modal
 openModalProduct.addEventListener('click', async (e) => {
-    e.preventDefault();
     const currentUser  = JSON.parse(localStorage.getItem('currentData'))
     const usersData = await getDataUser(usersURL);
 
@@ -200,7 +199,6 @@ openModalProduct.addEventListener('click', async (e) => {
     }
 });
 openModalPet.addEventListener('click', async (e) => {
-    e.preventDefault();
     const currentUser  = JSON.parse(localStorage.getItem('currentData'))
     const usersData = await getDataUser(usersURL);
 
