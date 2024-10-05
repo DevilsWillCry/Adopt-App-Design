@@ -192,19 +192,6 @@
       "biography": "Hey, I’m Ramon I’m a young, energetic lab who loves to have fun. My favorite activities include playing fetch, swimming, and going on long walks. I’m looking for a family that loves outdoor adventures as much as I do!",
       "aboutPet": "Ramon is a 2-year-old Labrador with boundless energy. He needs an active home that can provide him with plenty of exercise and mental stimulation. Oakley is great with kids and would thrive in a family that enjoys spending time outdoors.",
       "adoptionPrice": 100
-    },
-    {
-      "id": "4db30bcb-e5a6-4a41-9381-998e5978d1be",
-      "images": [],
-      "name": "Ramon",
-      "gender": "female",
-      "breed": "siames",
-      "eyeColor": "azules",
-      "personality": "lorem ipsum",
-      "medicalInfo": "vacunado",
-      "biography": "lorem ipsum",
-      "aboutPet": "es un gato travieso",
-      "adoptionPrice": "123"
     }
   ],
   "products": [
@@ -229,15 +216,6 @@
       "description": "Royal Canin Puppy food provides a balanced diet rich in vitamins and proteins to support the growth of your puppy.",
       "ageRange": "Puppies",
       "typeFood": "Dry"
-    },
-    {
-      "id": "3021c48e-7fc7-4877-a7b5-d2f64a49a5fe",
-      "images": [],
-      "name": "on",
-      "description": "Producto para gatos",
-      "ageRange": "5",
-      "typeFood": "dry",
-      "productPrice": "13"
     }
   ]
 }
