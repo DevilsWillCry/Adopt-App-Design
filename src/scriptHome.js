@@ -146,7 +146,8 @@ const closeModalBtn = document.getElementById('closeModalBtn');
 const modal = document.getElementById('modal');
 
 // Abrir modal
-openModalProduct.addEventListener('click', async () => {
+openModalProduct.addEventListener('click', async (e) => {
+    e.preventDefault();
     const currentUser  = JSON.parse(localStorage.getItem('currentData'))
     const usersData = await getDataUser(usersURL);
 
@@ -187,14 +188,19 @@ openModalProduct.addEventListener('click', async () => {
                 typeFood: productTypeFood,
                 productPrice: productPrice,
             }
-            await patchDataUser(usersURL, currentUser.id, {myProducts: myProductList})
-            await postDataPets(productsURL, newPet)
+            try {
+                await patchDataUser(usersURL, currentUser.id, {myProducts: myProductList})
+                await postDataPets(productsURL, newPet)
+            } catch (error) {
+                alert(error.message);
+            }
             //message to creation succesfull
             alert('Producto Creado con exito')
         });
     }
 });
-openModalPet.addEventListener('click', async () => {
+openModalPet.addEventListener('click', async (e) => {
+    e.preventDefault();
     const currentUser  = JSON.parse(localStorage.getItem('currentData'))
     const usersData = await getDataUser(usersURL);
 
@@ -245,8 +251,12 @@ openModalPet.addEventListener('click', async () => {
                 aboutPet: petAbout,
                 adoptionPrice: petAdoptionPrice,
             }
-            await patchDataUser(usersURL, currentUser.id, {myPets: myPetList})
-            await postDataPets(petsURL, newPet)
+            try {
+                await patchDataUser(usersURL, currentUser.id, {myPets: myPetList})
+                await postDataPets(petsURL, newPet)
+            } catch (error) {
+                alert(error.message);
+            }
             //message to creation succesfull
             alert('Producto Creado con exito')
         });
