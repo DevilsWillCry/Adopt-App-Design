@@ -57,7 +57,7 @@ registerForm.addEventListener('submit', async (e) => {
         cart: [],
         myPets: [],
         myProducts: [],
-        profileImage: ""
+        profileImage: "https://static.vecteezy.com/system/resources/previews/005/544/718/non_2x/profile-icon-design-free-vector.jpg"
     };
     // TODO: Check if email already exists
     const usersData = await getDataUser(usersURL);
