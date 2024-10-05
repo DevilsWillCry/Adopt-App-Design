@@ -164,12 +164,6 @@ openModalProduct.addEventListener('click', async (e) => {
             const productTypeFood = document.getElementById('typeFood').value;
             const productPrice = document.getElementById('product-price').value;
 
-            // Validar los valores
-            if (!productName ||!productAgeRange ||!productTypeFood ||!productPrice) {
-                alert('Todos los campos son obligatorios');
-                return;
-            }
-
             const userMyPet = usersData.find(user => 
                 user.id == currentUser.id
             );
@@ -188,15 +182,16 @@ openModalProduct.addEventListener('click', async (e) => {
                 productPrice: productPrice,
             }
             try {
-                await patchDataUser(usersURL, currentUser.id, {myProducts: myProductList})
-                await postDataPets(productsURL, newPet)
+                patchDataUser(usersURL, currentUser.id, {myProducts: myProductList})
+                postDataPets(productsURL, newPet)
+                //message to creation succesfull
+                alert('Producto Creado con exito')
             } catch (error) {
                 alert(error.message);
             }
-            //message to creation succesfull
-            alert('Producto Creado con exito')
         });
     }
+
 });
 openModalPet.addEventListener('click', async (e) => {
     const currentUser  = JSON.parse(localStorage.getItem('currentData'))
@@ -222,12 +217,6 @@ openModalPet.addEventListener('click', async (e) => {
             const petAbout = document.getElementById('aboutPet').value;
             const petAdoptionPrice = document.getElementById('adoptionPrice').value;
 
-            // Validar los valores
-            if (!petName ||!petGender ||!petBreed ||!petEyeColor ||!petPersonality ||!petMedicalInfo ||!petBiography ||!petAbout ||!petAdoptionPrice) {
-                alert('Todos los campos son obligatorios');
-                return;
-            }
-
             const userMyPet = usersData.find(user => 
                 user.id == currentUser.id
             );
@@ -250,13 +239,13 @@ openModalPet.addEventListener('click', async (e) => {
                 adoptionPrice: petAdoptionPrice,
             }
             try {
-                await patchDataUser(usersURL, currentUser.id, {myPets: myPetList})
-                await postDataPets(petsURL, newPet)
+                patchDataUser(usersURL, currentUser.id, {myPets: myPetList})
+                postDataPets(petsURL, newPet)
+                //message to creation succesfull
+                alert('Mascota creada con exito')
             } catch (error) {
                 alert(error.message);
             }
-            //message to creation succesfull
-            alert('Producto Creado con exito')
         });
     }
 });
